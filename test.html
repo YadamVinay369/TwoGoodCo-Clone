@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            margin-top: 10vh;
+            width: 50vw;
+            height: 50vw;
+            background-color: black;
+        }
+
+        #play{
+            position:fixed;
+            color: black;
+            background-color: white;
+            border-radius: 50% ;
+            padding: 3vw 2vw;
+            font-size: 1.3vw;
+            opacity: 0;
+            scale: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="play">PLAY</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        var contain = document.querySelector("#container");
+        var playbtn = document.querySelector("#play")
+
+        contain.addEventListener("mouseenter",()=>{
+            gsap.to(playbtn,{
+                opacity:1,
+                scale:1
+            })
+        })
+
+        contain.addEventListener("mouseleave",()=>{
+            gsap.to(playbtn,{
+                opacity:0,
+                scale:0
+            })
+        })
+
+        contain.addEventListener("mousemove",(dets)=>{
+            gsap.to(playbtn,{
+                left:dets.x-50,
+                top:dets.y-80
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 
-This is a static beginner-level website. 
+This is a beginner-level static website. 
 It can be made by using simple HTML, CSS, and JavaScript.
 Consists of good animations.
 
